@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Stat.js">
+    <Files>
+      <File FileName="Assets\scripts\anic.js" Line="36" Column="1" />
+      <File FileName="Assets\scripts\mainscript.js" Line="93" Column="4" />
+      <File FileName="Assets\scripts\Stat.js" Line="5" Column="19" />
+      <File FileName="Assets\scripts\ania.js" Line="76" Column="17" />
+      <File FileName="Assets\scripts\anib.js" Line="60" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
