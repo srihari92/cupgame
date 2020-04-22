@@ -2,20 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\mainscript.js">
     <Files>
-      <File FileName="Assets\scripts\about.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\ania.js" Line="91" Column="2" />
-      <File FileName="Assets\scripts\mainscript.js" Line="22" Column="43" />
+      <File FileName="Assets\scripts\mainscript.js" Line="20" Column="30" />
+      <File FileName="Assets\scripts\ania.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\mainscript.js" Line="20" Column="30" />
       <File FileName="Assets\scripts\Stat.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\anic.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\anib.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\easy.js" Line="1" Column="1" />
       <File FileName="Assets\scripts\hard.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\medium.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\loadmenuani.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\newmenuani.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\quitmenuani.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\baseani.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\about.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\anib.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\anic.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

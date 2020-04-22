@@ -7,19 +7,27 @@ var c_time: float  ;
 var Asposition=1;
 var Bsposition=2;
 var Csposition=3;
+var pausetext:String="Pause";
+var mute:String ="Mute";
 var pre_time: float;
 var isreset=false;
 var showmsg:boolean = false;
 var showbutton:boolean=false;
+var showbutton1:boolean=false;
 var pausepressed:boolean=false;
 var pastemp:boolean=true;
 var mstemp:boolean=true;
-var msg:String="Congurlation! now move to next Diffculty";
+var msg:String="Congraulation!, Ur going to finish";
 function OnGUI()
 {
+if(GUI.Button(Rect( 10,Screen.height-80,100,20),"Restart"))
+		{
+			Application.LoadLevel(2);
+			Statics.resetAll();
+		}
 	if(showmsg)
 	{
-		GUI.Box (Rect (Screen.width/2-150,10 ,200,22),msg);
+		GUI.TextArea (Rect (Screen.width/2-150,10 ,200,22),msg);
 	}
 	if(showbutton)
 		if(GUI.Button(Rect(Screen.width/2 -51,230 ,60,60),"Restart"))
@@ -27,35 +35,54 @@ function OnGUI()
 			Application.LoadLevel(2);
 			Statics.resetAll();
 		}
-		
-		if(GUI.Button(Rect( 10,10,100,20),"Main Menu"))
+	if(showbutton1)
+		if(Statics.diffcultylevel==3)
 		{
+			if(GUI.Button(Rect(Screen.width/2 -51,230 ,60,60),"You Win"))
+			{
+				Application.LoadLevel(0);
+				Statics.resetAll();
+			}
+		}
+	else
+		if (GUI.Button(Rect(Screen.width/2 -51,230 ,80,80),"Next Level"))
+		{
+			Application.LoadLevel(2);
+			Statics.resetAll();
+			if(Statics.diffcultylevel<3)
+				Statics.diffcultylevel++;
+		}	
+	if(GUI.Button(Rect( 10,10,100,20),"Main Menu"))
+	{
 		Statics.resetAll();
 		Application.LoadLevel(0);
-		}
-		if(GUI.Button(Rect( 10,35,100,20),"Pause"))
+	}
+	if(GUI.Button(Rect( 10,40,100,20),pausetext))
+	{
+		if(pastemp)
 		{
-			if(pastemp)
-			{
-				pausepressed=true;
-				pastemp=false;
-			}
-			else
-			{
-				pastemp=true;
-				pausepressed=false;
-			}
+			pausepressed=true;
+			pausetext="Play";
+			pastemp=false;
 		}
-		if(GUI.Button(Rect( 10,60,100,20),"Mute"))
+		else
+		{
+			pastemp=true;
+			pausetext="Pause";
+			pausepressed=false;
+		}
+	}
+		if(GUI.Button(Rect( 10,Screen.height-40,100,20),mute))
 		{
 			if(mstemp)
 			{
-				
+				mute="Sound";
 				mstemp=false;
 				audio.Stop();
 			}
 			else
 			{
+				mute="Mute";
 				audio.Play();
 				mstemp=true;
 			}
@@ -65,13 +92,16 @@ function Start()
 {
 	pre_time=Time.time;
 	showbutton=false;
+	showbutton1=false;
 	showmsg=false;
-	msg="Congurlation! now u can move to next Diffculty";
+	pausetext="Pause";
+	mute="Mute";
+	msg="Congraulation!, Ur going to finish";
 	a.first();
 }
 function Update()
 {
-	if(!pausepressed && Statics.currentlevel > 0)
+	if(!pausepressed && Statics.currentlevel > 0 && Statics.currentlevel < 21)
 	{
 		
 		c_time =Time.time;
@@ -102,6 +132,17 @@ function Update()
 		showbutton=true;
 		msg="You have lost the game";
 		showmsg=true;
+	}
+	else if(Statics.currentlevel>20)
+	{
+		showbutton1=true;
+		if(Statics.diffcultylevel<3)
+			msg="Congurlation! now move to next Diffculty";
+		else
+			msg="Congurlaion You Have Finish";
+			
+		showmsg=true;
+		
 	}
 }
 

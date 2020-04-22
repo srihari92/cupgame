@@ -32,7 +32,7 @@ var isOpen:boolean =false;
 function first()
 {
 	animation.Play("open");
-	yield WaitForSeconds (2);
+	yield WaitForSeconds (1);
 	animation.CrossFade ("close");
 }
 function x()
@@ -54,7 +54,7 @@ if(Statics.finish && mouseentera)
 			msg="Right one, Level Up 1 time";
 			Statics.levelsteps+=3;
 			Statics.steps=Statics.levelsteps;
-			if(Statics.spdforupdate>.187)
+			if(Statics.currentlevel<21)
 			{
 				Statics.spdforupdate=Statics.spdforupdate-0.0375;
 			}
